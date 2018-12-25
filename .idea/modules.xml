@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/modules/client-demo/client-demo.iml" filepath="$PROJECT_DIR$/modules/client-demo/client-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/cms-admin/cms-admin.iml" filepath="$PROJECT_DIR$/modules/cms-admin/cms-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-server/eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/modules.iml" filepath="$PROJECT_DIR$/modules/modules.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springbootDemo.iml" filepath="$PROJECT_DIR$/springbootDemo.iml" />
+    </modules>
+  </component>
+</project>

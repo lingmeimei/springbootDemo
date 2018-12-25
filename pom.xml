@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.example</groupId>
+	<artifactId>springbootDemo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<!--spring boot项目打包成war并在tomcat上运行的步骤-->
+	<!-- 1. 手动修改springboot的web项目打包方式为 war 包-->
+	<packaging>war</packaging>
+
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.0.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<modules>
+		<module>eureka-server</module>
+		<module>modules</module>
+		<!--<module>pig-config</module>
+		<module>pig-common</module>
+		<module>pig-eureka</module>
+		<module>pig-gateway</module>
+		<module>pig-visual</module>-->
+	</modules>
+
+
+	<dependencies>
+		<!--基础依赖-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<!-- 2.如果没有引用spring-boot-starter-web则先引用，再移除嵌入式tomcat插件 -->
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-tomcat</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!--3. 添加servlet-api的依赖-->
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-servlet-api</artifactId>
+			<version>8.0.36</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!--3.或者添加此servlet-api依赖
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>-->
+
+		<!--4.
+		修改Application启动类,
+		继承 SpringBootServletInitializer 并重写 configure 方法
+		@EnableScheduling
+		@SpringBootApplication
+		public class SpringbootApplication extends SpringBootServletInitializer{
+			@Override
+			protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+				return application.sources(SpringbootApplication.class);
+			}
+			public static void main(String[] args) {
+				SpringApplication.run(SpringbootApplication.class, args);
+			}
+		}-->
+
+		<!--5.
+		在项目根目录下（即包含pom.xml的目录）的文件夹窗口地址栏里输入cmd回车，
+		即可打开命令行,
+		在命令行里输入：
+		mvn clean package即可， 等待打包完成，
+		出现[INFO] BUILD SUCCESS即为打包成功。
+		然后把target目录下的war包放到tomcat的webapps目录下，
+		启动tomcat，即可自动解压部署。
+		最后在浏览器中输入
+		http://localhost(IP地址):[端口号]/[打包项目名]/
+		发布成功
+		-->
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- springboot 构建rest风格的接口文档
+		1. 添加相关依赖-->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+		<!--2.在SpringbootApplication的同级之下创建Swagger2类-->
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>
