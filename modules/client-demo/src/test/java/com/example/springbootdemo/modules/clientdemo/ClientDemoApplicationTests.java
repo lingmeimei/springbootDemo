@@ -1,4 +1,4 @@
-package com.example.springbootdemo.clientdemo;
+package com.example.springbootdemo.modules.clientdemo;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
