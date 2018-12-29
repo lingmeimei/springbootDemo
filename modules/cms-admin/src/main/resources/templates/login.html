@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{css/signin.css}"/>
+    <style type="text/css">
+        body {
+            padding-top: 50px;
+        }
+
+        .starter-template {
+            padding: 40px 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="starter-template">
+        <h2>使用账号密码登录</h2>
+        <form class="form-signin" role="form" name="form" th:action="@{/login}" action="/login" method="post">
+            <div class="form-group">
+                <label for="username">账号</label>
+                <input type="text"
+                       class="form-control"
+                       name="username"
+                       value=""
+                       placeholder="账号"
+                       style="background: none;
+                       border: none;
+                       border-bottom:1px solid #ddd;
+                       border-top-width:0" />
+            </div>
+            <div class="form-group">
+                <label for="password">密码</label>
+                <input type="password" class="form-control"
+                       name="password" placeholder="密码"/>
+            </div>
+            <div class="form-group">
+                <div class="checkbox col-sm-5" style="margin: 0;padding: 0">
+                    <label>
+                        <input type="checkbox">下次自动登录
+                    </label>
+                </div>
+                <div class="col-sm-3"></div>
+                <div class="col-sm-2" style="margin: 0;padding: 0 15px 0 0;text-align: right">
+                    <a class="callForP" href="/lostPassword">忘记密码</a>
+                </div>
+            </div>
+            <input type="submit" id="loginBtn" value="Login" class="btn btn-primary" />
+        </form>
+    </div>
+</body>
+</html>

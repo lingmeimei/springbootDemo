@@ -1,4 +1,4 @@
-package com.example.springbootdemo.modules.cmsadmin;
+package com.example.springbootdemo.modules.cmsadmin.config;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;

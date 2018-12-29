@@ -25,11 +25,15 @@ public class UserPri implements Serializable{
     @Column(nullable = false)
     private Integer age;
 
+    @Column(nullable = false)
+    private String password;
+
     public UserPri(){}
 
-    public UserPri(String userName, Integer age) {
+    public UserPri(String userName, Integer age,String password) {
         this.userName = userName;
         this.age = age;
+        this.password = password;
     }
 
 

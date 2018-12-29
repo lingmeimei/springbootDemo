@@ -1,4 +1,4 @@
-package com.example.springbootdemo.modules.cmsadmin;
+package com.example.springbootdemo.modules.cmsadmin.config;
 
 //import org.hibernate.jpa.boot.spi.EntityManagerFactoryBuilder;
 

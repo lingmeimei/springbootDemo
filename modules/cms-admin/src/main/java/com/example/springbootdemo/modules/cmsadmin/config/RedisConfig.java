@@ -1,4 +1,4 @@
-package com.example.springbootdemo.modules.cmsadmin;
+package com.example.springbootdemo.modules.cmsadmin.config;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
